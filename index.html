@@ -58,10 +58,29 @@ font-size:50px;
 /* SECCIONES */
 .section{
 padding:60px 40px;
+max-width:1200px;
+margin:0 auto;
 }
 
 h2{
-margin-bottom:20px;
+margin-bottom:30px;
+font-size:2em;
+color:var(--oscuro);
+text-align:center;
+position:relative;
+padding-bottom:15px;
+}
+
+h2::after{
+content:'';
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:60px;
+height:3px;
+background:var(--cafe);
+border-radius:2px;
 }
 
 /* CARRUSEL */
@@ -84,19 +103,39 @@ border-radius:10px;
 .card{
 min-width:220px;
 background:white;
-padding:20px;
 border-radius:15px;
 scroll-snap-align:start;
 box-shadow:0 5px 15px rgba(0,0,0,0.05);
+overflow:hidden;
+transition:transform 0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+height:120px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+text-align:center;
 }
 
 .card h3{
-margin-bottom:10px;
+margin-bottom:8px;
+font-size:1.1em;
+color:var(--oscuro);
 }
 
 .price{
 color:var(--verde);
 font-weight:600;
+font-size:1.1em;
 }
 
 /* GRID SIMPLE */
@@ -110,6 +149,13 @@ gap:20px;
 background:white;
 padding:20px;
 border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+transition:transform 0.3s ease;
+}
+
+.item:hover{
+transform:translateY(-3px);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
@@ -143,16 +189,76 @@ margin-top:40px;
 <h2>BEBIDAS</h2>
 
 <div class="carousel">
-<div class="card"><h3>Espresso</h3><p class="price">$35</p></div>
-<div class="card"><h3>Americano</h3><p class="price">$55</p></div>
-<div class="card"><h3>Latte</h3><p class="price">$70</p></div>
-<div class="card"><h3>Cappuccino</h3><p class="price">$70</p></div>
-<div class="card"><h3>Caramel</h3><p class="price">$80</p></div>
-<div class="card"><h3>Moka</h3><p class="price">$80</p></div>
-<div class="card"><h3>Matcha</h3><p class="price">$80</p></div>
-<div class="card"><h3>Chai</h3><p class="price">$80</p></div>
-<div class="card"><h3>Taro</h3><p class="price">$80</p></div>
-<div class="card"><h3>Chocolate</h3><p class="price">$70</p></div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Espresso">
+<div class="card-content">
+<h3>Espresso</h3>
+<p class="price">$35</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Americano">
+<div class="card-content">
+<h3>Americano</h3>
+<p class="price">$55</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96" alt="Latte">
+<div class="card-content">
+<h3>Latte</h3>
+<p class="price">$70</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517706277404-df4d745db1d6" alt="Cappuccino">
+<div class="card-content">
+<h3>Cappuccino</h3>
+<p class="price">$70</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9" alt="Caramel">
+<div class="card-content">
+<h3>Caramel</h3>
+<p class="price">$80</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1572442952024-6f97b6c9c3b3" alt="Moka">
+<div class="card-content">
+<h3>Moka</h3>
+<p class="price">$80</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96" alt="Matcha">
+<div class="card-content">
+<h3>Matcha</h3>
+<p class="price">$80</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1594630003108-3c0b9dfc1c5f" alt="Chai">
+<div class="card-content">
+<h3>Chai</h3>
+<p class="price">$80</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0" alt="Taro">
+<div class="card-content">
+<h3>Taro</h3>
+<p class="price">$80</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1488900128323-21503983a07e" alt="Chocolate">
+<div class="card-content">
+<h3>Chocolate</h3>
+<p class="price">$70</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -161,81 +267,279 @@ margin-top:40px;
 <h2>OTRAS BEBIDAS</h2>
 
 <div class="carousel">
-<div class="card"><h3>Jugo de Naranja</h3><p class="price">$55</p></div>
-<div class="card"><h3>Limonada</h3><p class="price">$55</p></div>
-<div class="card"><h3>Refresco</h3><p class="price">$40</p></div>
-<div class="card"><h3>Agua Mineral</h3><p class="price">$45</p></div>
-<div class="card"><h3>Agua Natural</h3><p class="price">$25</p></div>
-<div class="card"><h3>Tisana</h3><p class="price">$70</p></div>
-<div class="card"><h3>Proteína</h3><p class="price">$95</p></div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600701881321-50ebdf14bc47" alt="Jugo de Naranja">
+<div class="card-content">
+<h3>Jugo de Naranja</h3>
+<p class="price">$55</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38" alt="Limonada">
+<div class="card-content">
+<h3>Limonada</h3>
+<p class="price">$55</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558815402-6e89d9c2c5c6" alt="Refresco">
+<div class="card-content">
+<h3>Refresco</h3>
+<p class="price">$40</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600701881321-50ebdf14bc47" alt="Agua Mineral">
+<div class="card-content">
+<h3>Agua Mineral</h3>
+<p class="price">$45</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96" alt="Agua Natural">
+<div class="card-content">
+<h3>Agua Natural</h3>
+<p class="price">$25</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96" alt="Tisana">
+<div class="card-content">
+<h3>Tisana</h3>
+<p class="price">$70</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96" alt="Proteína">
+<div class="card-content">
+<h3>Proteína</h3>
+<p class="price">$95</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- VILLA LEON -->
 <section class="section">
 <h2>VILLA LEÓN</h2>
-<div class="grid">
-<div class="item">Especial de la casa — $55</div>
+<div class="carousel">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Especial de la casa">
+<div class="card-content">
+<h3>Especial de la casa</h3>
+<p class="price">$55</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- LECHE -->
 <section class="section">
 <h2>TIPOS DE LECHE</h2>
-<div class="grid">
-<div class="item">Entera</div>
-<div class="item">Light</div>
-<div class="item">Deslactosada</div>
-<div class="item">Soya</div>
-<div class="item">Coco</div>
+<div class="carousel">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38" alt="Leche Entera">
+<div class="card-content">
+<h3>Entera</h3>
+<p class="price">$5</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38" alt="Leche Light">
+<div class="card-content">
+<h3>Light</h3>
+<p class="price">$5</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38" alt="Leche Deslactosada">
+<div class="card-content">
+<h3>Deslactosada</h3>
+<p class="price">$5</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38" alt="Leche de Soya">
+<div class="card-content">
+<h3>Soya</h3>
+<p class="price">$10</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38" alt="Leche de Coco">
+<div class="card-content">
+<h3>Coco</h3>
+<p class="price">$10</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- JARABES -->
 <section class="section">
 <h2>JARABES</h2>
-<div class="grid">
-<div class="item">Vainilla</div>
-<div class="item">Vainilla SF</div>
-<div class="item">Avellana</div>
-<div class="item">Macadamia</div>
-<div class="item">Irlandesa</div>
+<div class="carousel">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9" alt="Jarabe de Vainilla">
+<div class="card-content">
+<h3>Vainilla</h3>
+<p class="price">$5</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9" alt="Jarabe de Vainilla SF">
+<div class="card-content">
+<h3>Vainilla SF</h3>
+<p class="price">$5</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9" alt="Jarabe de Avellana">
+<div class="card-content">
+<h3>Avellana</h3>
+<p class="price">$5</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9" alt="Jarabe de Macadamia">
+<div class="card-content">
+<h3>Macadamia</h3>
+<p class="price">$5</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9" alt="Jarabe Irlandesa">
+<div class="card-content">
+<h3>Irlandesa</h3>
+<p class="price">$5</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- ALMUERZOS -->
 <section class="section">
 <h2>ALMUERZOS</h2>
-<div class="grid">
-<div class="item">Huevos al gusto — $190</div>
-<div class="item">Machacado — $200</div>
-<div class="item">Huevos rancheros — $190</div>
-<div class="item">Chilaquiles — $200</div>
-<div class="item">Enchiladas — $200</div>
-<div class="item">Hotcakes — $180</div>
+<div class="carousel">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Huevos al gusto">
+<div class="card-content">
+<h3>Huevos al gusto</h3>
+<p class="price">$190</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Machacado">
+<div class="card-content">
+<h3>Machacado</h3>
+<p class="price">$200</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Huevos rancheros">
+<div class="card-content">
+<h3>Huevos rancheros</h3>
+<p class="price">$190</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Chilaquiles">
+<div class="card-content">
+<h3>Chilaquiles</h3>
+<p class="price">$200</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Enchiladas">
+<div class="card-content">
+<h3>Enchiladas</h3>
+<p class="price">$200</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Hotcakes">
+<div class="card-content">
+<h3>Hotcakes</h3>
+<p class="price">$180</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- FRIOS -->
 <section class="section">
 <h2>ALIMENTOS FRÍOS</h2>
-<div class="grid">
-<div class="item">Ensalada Villa — $160</div>
-<div class="item">Sandwich pollo — $170</div>
-<div class="item">Sandwich pavo — $170</div>
-<div class="item">Uvas — $65</div>
-<div class="item">Parfait</div>
-<div class="item">Fresas con crema — $105</div>
+<div class="carousel">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Ensalada Villa">
+<div class="card-content">
+<h3>Ensalada Villa</h3>
+<p class="price">$160</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af" alt="Sandwich pollo">
+<div class="card-content">
+<h3>Sandwich pollo</h3>
+<p class="price">$170</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af" alt="Sandwich pavo">
+<div class="card-content">
+<h3>Sandwich pavo</h3>
+<p class="price">$170</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1537640538966-79f36943c5a5" alt="Uvas">
+<div class="card-content">
+<h3>Uvas</h3>
+<p class="price">$65</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af" alt="Parfait">
+<div class="card-content">
+<h3>Parfait</h3>
+<p class="price">$85</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6" alt="Fresas con crema">
+<div class="card-content">
+<h3>Fresas con crema</h3>
+<p class="price">$105</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- PANADERIA -->
 <section class="section">
 <h2>PANADERÍA</h2>
-<div class="grid">
-<div class="item">Rol glaseado — $50</div>
-<div class="item">Galleta — $45</div>
-<div class="item">Concha — $60</div>
+<div class="carousel">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558962600-28b71d3c71d4" alt="Rol glaseado">
+<div class="card-content">
+<h3>Rol glaseado</h3>
+<p class="price">$50</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="Galleta">
+<div class="card-content">
+<h3>Galleta</h3>
+<p class="price">$45</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586444247142-954d71d822c1" alt="Concha">
+<div class="card-content">
+<h3>Concha</h3>
+<p class="price">$60</p>
+</div>
+</div>
 </div>
 </section>
 
